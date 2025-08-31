@@ -1,0 +1,116 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Registration Form</h1>
+    <p class="lead">A demo showcasing a wide variety of HTML5 form controls, validation, and accessibility best practices.</p>
+  </header>
+
+    <form id="regForm" action="/submit" method="POST" novalidate>
+
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="John" required />
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" placeholder="Doe" required />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+      <p id="ageOutput"></p>
+
+      <label>Gender:</label>
+      <label><input type="radio" name="gender" value="male" required /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+      <label><input type="radio" name="gender" value="other" /> Other</label>
+    </fieldset>
+
+    <!-- Contact Details -->
+    <fieldset>
+      <legend>Contact Details</legend>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="9876543210" required />
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="Your address here..."></textarea>
+    </fieldset>
+
+    <!-- Academic Details -->
+    <fieldset>
+      <legend>Academic Details</legend>
+      <label for="dept">Department:</label>
+      <select id="dept" name="dept" required>
+        <option value="">-- Select Department --</option>
+        <option value="cse">Computer Science</option>
+        <option value="ece">Electronics</option>
+        <option value="mech">Mechanical</option>
+        <option value="civil">Civil</option>
+      </select>
+
+      <label for="year">Year of Study:</label>
+      <input type="number" id="year" name="year" min="1" max="4" required />
+
+      <label for="skills">Technical Skills (choose multiple):</label>
+      <select id="skills" name="skills" multiple size="4">
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+        <option value="web">Web Development</option>
+      </select>
+    </fieldset>
+
+    <!-- Account Security -->
+    <fieldset>
+      <legend>Account Security</legend>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <meter id="passwordStrength" min="0" max="4" value="0"></meter>
+      <p id="passwordMsg"></p>
+    </fieldset>
+
+    <!-- Extra Inputs -->
+    <fieldset>
+      <legend>Extras</legend>
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" />
+
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color" />
+
+      <label for="website">Personal Website:</label>
+      <input type="url" id="website" name="website" placeholder="https://example.com" />
+
+      <label for="linkedin">LinkedIn Profile:</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username" />
+        <br /><br/>
+      <label>
+        <input type="checkbox" name="terms" required /> I agree to the Terms and Conditions
+      </label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <script src="script.js"></script>
+  <script src="validate.js"></script>
+  <script src="server.js"></script>
+
+</body>
+</html>
